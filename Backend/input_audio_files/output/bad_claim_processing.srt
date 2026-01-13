@@ -1,0 +1,44 @@
+1
+00:00:00,000 --> 00:00:03,459
+[AGENT] Yeah, hello, MTBC, what do you want?
+
+2
+00:00:04,059 --> 00:00:10,439
+[CUSTOMER] Hi, I'm calling to ask about my claim status. I submitted it last week and wanted to know the processing time.
+
+3
+00:00:10,820 --> 00:00:14,599
+[AGENT] Fine, before I check anything, give me your name and date of birth.
+
+4
+00:00:15,179 --> 00:00:20,940
+[CUSTOMER] Sure, my name is Robert Hayes and my DOB is March 9, 1980.
+
+5
+00:00:21,719 --> 00:00:25,640
+[AGENT] Okay, whatever, checking. Your claim was submitted on the 26th.
+
+6
+00:00:26,039 --> 00:00:28,760
+[CUSTOMER] Right, that's correct. So, how long will it take?
+
+7
+00:00:29,320 --> 00:00:38,079
+[AGENT] It's pretty simple. The standard processing time for your payer is 7-14 business days. Your claim is still under routine review. Nothing is delayed.
+
+8
+00:00:38,619 --> 00:00:41,179
+[CUSTOMER] All right, I just wanted to make sure it's still moving.
+
+9
+00:00:41,840 --> 00:00:48,280
+[AGENT] Yeah, it's moving. There's nothing for you to do. You just wait. Once the payer finishes, the system updates automatically.
+
+10
+00:00:48,740 --> 00:00:50,560
+[CUSTOMER] Okay, thanks for the information.
+
+11
+00:00:51,240 --> 00:00:52,399
+[AGENT] Yeah, okay, bye.
+

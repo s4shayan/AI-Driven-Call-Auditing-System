@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaker Diarization System - Technical Documentation</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #10b981;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --bg-code: #0d1117;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --accent-blue: #3b82f6;
+            --accent-green: #22c55e;
+            --accent-yellow: #eab308;
+            --accent-red: #ef4444;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        h2 {
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin: 2.5rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        h2::before {
+            content: '▸';
+            color: var(--secondary);
+        }
+        
+        h3 {
+            font-size: 1.25rem;
+            color: var(--text);
+            margin: 1.5rem 0 0.75rem;
+        }
+        
+        h4 {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin: 1.25rem 0 0.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+        
+        .card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border);
+        }
+        
+        .card-title {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+        
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        th {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        
+        code {
+            background: var(--bg-code);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: var(--accent-green);
+        }
+        
+        pre {
+            background: var(--bg-code);
+            padding: 1.25rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            border: 1px solid var(--border);
+        }
+        
+        pre code {
+            padding: 0;
+            background: none;
+            color: var(--text);
+        }
+        
+        .comment { color: #6a737d; }
+        .keyword { color: #ff7b72; }
+        .string { color: #a5d6ff; }
+        .function { color: #d2a8ff; }
+        .number { color: #79c0ff; }
+        
+        .flow-diagram {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(16, 185, 129, 0.1));
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border);
+        }
+        
+        .flow-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .flow-step {
+            background: var(--bg-card);
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 500;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .flow-step.primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border: none;
+            color: white;
+        }
+        
+        .flow-arrow {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .feature-card {
+            background: var(--bg-card);
+            border-radius: 10px;
+            padding: 1.25rem;
+            border: 1px solid var(--border);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .badge-blue { background: rgba(59, 130, 246, 0.2); color: var(--accent-blue); }
+        .badge-green { background: rgba(34, 197, 94, 0.2); color: var(--accent-green); }
+        .badge-yellow { background: rgba(234, 179, 8, 0.2); color: var(--accent-yellow); }
+        
+        .alert {
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid;
+        }
+        
+        .alert-info {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: var(--accent-blue);
+        }
+        
+        .alert-success {
+            background: rgba(34, 197, 94, 0.1);
+            border-color: var(--accent-green);
+        }
+        
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+        }
+        
+        .toc {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+        }
+        
+        .toc-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        .toc ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 0.5rem;
+        }
+        
+        .toc li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .toc li a:hover {
+            color: var(--primary);
+        }
+        
+        .toc li a::before {
+            content: '→';
+            color: var(--secondary);
+        }
+        
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.75rem; }
+            .flow-steps { flex-direction: column; }
+            .flow-arrow { transform: rotate(90deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎙️ Speaker Diarization System</h1>
+        <p class="subtitle">Technical Documentation — How speakers are separated and identified in audio recordings</p>
+        
+        <div class="toc">
+            <div class="toc-title">📑 Table of Contents</div>
+            <ul>
+                <li><a href="#stack">Technology Stack</a></li>
+                <li><a href="#overview">System Overview</a></li>
+                <li><a href="#preprocessing">Audio Preprocessing</a></li>
+                <li><a href="#transcription">Whisper Transcription</a></li>
+                <li><a href="#features">Feature Extraction</a></li>
+                <li><a href="#clustering">Speaker Clustering</a></li>
+                <li><a href="#postprocessing">Post-Processing</a></li>
+                <li><a href="#output">Output Formats</a></li>
+            </ul>
+        </div>
+
+        <!-- Technology Stack -->
+        <h2 id="stack">Technology Stack</h2>
+        <div class="card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Library</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge badge-blue">Transcription</span></td>
+                        <td><code>faster-whisper</code></td>
+                        <td>OpenAI Whisper optimized for CPU</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-green">Audio Features</span></td>
+                        <td><code>librosa</code></td>
+                        <td>MFCC extraction & audio analysis</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-yellow">Clustering</span></td>
+                        <td><code>scikit-learn</code></td>
+                        <td>Agglomerative clustering algorithm</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-blue">Audio I/O</span></td>
+                        <td><code>pydub</code>, <code>soundfile</code></td>
+                        <td>Format conversion & file handling</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- System Overview -->
+        <h2 id="overview">System Overview</h2>
+        <p>The pipeline processes audio through 5 main stages to identify and separate speakers:</p>
+        
+        <div class="flow-diagram">
+            <div class="flow-steps">
+                <div class="flow-step">📁 MP3 Input</div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step">🔄 WAV Convert</div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step primary">🎤 Whisper</div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step">📊 Extract Features</div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step primary">🔀 Cluster</div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step">✅ Output</div>
+            </div>
+        </div>
+
+        <!-- Audio Preprocessing -->
+        <h2 id="preprocessing"><span class="step-number">1</span>Audio Preprocessing</h2>
+        <p>The first step converts the input audio to a standardized format for processing:</p>
+        
+        <pre><code><span class="keyword">def</span> <span class="function">convert_to_wav</span>(input_path, output_path):
+    audio = AudioSegment.<span class="function">from_file</span>(input_path)
+    audio = audio.<span class="function">set_frame_rate</span>(<span class="number">16000</span>).<span class="function">set_channels</span>(<span class="number">1</span>)
+    audio.<span class="function">export</span>(output_path, format=<span class="string">"wav"</span>)</code></pre>
+        
+        <div class="card">
+            <div class="card-title">⚙️ Parameters</div>
+            <table>
+                <tr><th>Parameter</th><th>Value</th><th>Why</th></tr>
+                <tr><td>Sample Rate</td><td><code>16kHz</code></td><td>Standard for speech recognition</td></tr>
+                <tr><td>Channels</td><td><code>1 (Mono)</code></td><td>Simplifies processing</td></tr>
+                <tr><td>Format</td><td><code>WAV</code></td><td>Uncompressed for accuracy</td></tr>
+            </table>
+        </div>
+
+        <!-- Whisper Transcription -->
+        <h2 id="transcription"><span class="step-number">2</span>Whisper Transcription</h2>
+        <p>OpenAI's Whisper model transcribes audio to text with precise timestamps:</p>
+        
+        <pre><code>model = <span class="function">WhisperModel</span>(model_size, device=<span class="string">"cpu"</span>, compute_type=<span class="string">"int8"</span>)
+segments, info = model.<span class="function">transcribe</span>(wav_path, beam_size=<span class="number">5</span>, word_timestamps=<span class="keyword">True</span>)</code></pre>
+        
+        <div class="alert alert-info">
+            <strong>Output per segment:</strong>
+            <code>{"start": 0.0, "end": 3.2, "text": "Hello, thank you for calling MTBC."}</code>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">📊 Model Size Comparison</div>
+            <table>
+                <tr><th>Model</th><th>Parameters</th><th>Speed</th><th>Accuracy</th></tr>
+                <tr><td>tiny</td><td>39M</td><td>⚡⚡⚡⚡</td><td>⭐⭐</td></tr>
+                <tr><td>base</td><td>74M</td><td>⚡⚡⚡</td><td>⭐⭐⭐</td></tr>
+                <tr><td>small</td><td>244M</td><td>⚡⚡</td><td>⭐⭐⭐⭐</td></tr>
+                <tr><td>medium</td><td>769M</td><td>⚡</td><td>⭐⭐⭐⭐⭐</td></tr>
+                <tr><td>large-v3</td><td>1550M</td><td>🐢</td><td>⭐⭐⭐⭐⭐⭐</td></tr>
+            </table>
+        </div>
+
+        <!-- Feature Extraction -->
+        <h2 id="features"><span class="step-number">3</span>Feature Extraction (The Core)</h2>
+        <p>This is the <strong>heart of speaker separation</strong>. For each segment, we extract acoustic features unique to each speaker's voice:</p>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎵</div>
+                <div class="feature-title">MFCCs (20 coefficients)</div>
+                <div class="feature-desc">
+                    <strong>Mel-Frequency Cepstral Coefficients</strong> capture vocal tract shape, voice timbre, and speaking characteristics - unique to each person.
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">☀️</div>
+                <div class="feature-title">Spectral Centroid</div>
+                <div class="feature-desc">
+                    Measures voice "brightness" - the center of mass of the spectrum. Higher values = brighter voice.
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📶</div>
+                <div class="feature-title">Spectral Bandwidth</div>
+                <div class="feature-desc">
+                    Voice frequency spread - varies significantly between speakers based on vocal characteristics.
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">〰️</div>
+                <div class="feature-title">Zero Crossing Rate</div>
+                <div class="feature-desc">
+                    Speech/silence patterns and voice texture - helps distinguish different speaking styles.
+                </div>
+            </div>
+        </div>
+
+        <h3>How MFCCs Work</h3>
+        <div class="flow-diagram">
+            <div class="flow-steps">
+                <div class="flow-step">Audio Signal</div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step">FFT</div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step primary">Mel Filter Bank</div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step">Log Power</div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step primary">DCT</div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step">20 MFCCs</div>
+            </div>
+        </div>
+        
+        <div class="alert alert-success">
+            <strong>Why MFCCs distinguish speakers:</strong> Each person's vocal tract has unique physical properties (throat length, nasal cavity size, etc.) that create distinctive spectral patterns captured by MFCCs.
+        </div>
+
+        <h3>Final Feature Vector</h3>
+        <p>Each segment gets a <strong>43-dimensional feature vector</strong>:</p>
+        <pre><code>[MFCC_mean(<span class="number">20</span>) + MFCC_std(<span class="number">20</span>) + spectral_centroid(<span class="number">1</span>) + spectral_bandwidth(<span class="number">1</span>) + ZCR(<span class="number">1</span>)]</code></pre>
+
+        <!-- Speaker Clustering -->
+        <h2 id="clustering"><span class="step-number">4</span>Speaker Clustering</h2>
+        <p>Groups segments by voice similarity using <strong>Agglomerative Clustering</strong>:</p>
+        
+        <pre><code><span class="comment"># Normalize features</span>
+scaler = <span class="function">StandardScaler</span>()
+features_normalized = scaler.<span class="function">fit_transform</span>(features)
+
+<span class="comment"># Cluster into speakers</span>
+clustering = <span class="function">AgglomerativeClustering</span>(
+    n_clusters=num_speakers,  <span class="comment"># Default: 2</span>
+    metric=<span class="string">'euclidean'</span>,
+    linkage=<span class="string">'ward'</span>
+)
+labels = clustering.<span class="function">fit_predict</span>(features_normalized)</code></pre>
+
+        <h3>How Agglomerative Clustering Works</h3>
+        <div class="card">
+            <table>
+                <tr><th>Stage</th><th>Process</th></tr>
+                <tr><td><strong>Initial</strong></td><td>Each segment is its own cluster: [Seg1] [Seg2] [Seg3] [Seg4] [Seg5]</td></tr>
+                <tr><td><strong>Step 1</strong></td><td>Merge most similar: [Seg1+Seg2] [Seg3] [Seg4+Seg5]</td></tr>
+                <tr><td><strong>Step 2</strong></td><td>Continue merging: [Seg1+Seg2+Seg3] [Seg4+Seg5]</td></tr>
+                <tr><td><strong>Final</strong></td><td><span class="badge badge-blue">SPEAKER_00: Seg1,2,3</span> <span class="badge badge-green">SPEAKER_01: Seg4,5</span></td></tr>
+            </table>
+        </div>
+        
+        <div class="alert alert-info">
+            <strong>Ward Linkage:</strong> Minimizes variance when merging clusters - produces compact, well-separated speaker groups.
+        </div>
+
+        <!-- Post-Processing -->
+        <h2 id="postprocessing"><span class="step-number">5</span>Post-Processing</h2>
+        
+        <h3>5.1 Temporal Smoothing</h3>
+        <p>Fixes unrealistic rapid speaker switching by reassigning short isolated segments:</p>
+        
+        <pre><code><span class="comment"># If a short segment (&lt;1s) is surrounded by same speaker, reassign it</span>
+<span class="keyword">if</span> seg_duration &lt; min_duration:
+    <span class="keyword">if</span> labels[i-<span class="number">1</span>] == labels[i+<span class="number">1</span>] <span class="keyword">and</span> labels[i] != labels[i-<span class="number">1</span>]:
+        smoothed[i] = labels[i-<span class="number">1</span>]</code></pre>
+
+        <div class="card">
+            <div class="card-title">Example</div>
+            <table>
+                <tr><th>Before</th><td>SPEAKER_00 (3s) → SPEAKER_01 (0.5s) → SPEAKER_00 (2.5s) → SPEAKER_00 (4s)</td></tr>
+                <tr><th>After</th><td>SPEAKER_00 (3s) → SPEAKER_00 (0.5s) → SPEAKER_00 (2.5s) → SPEAKER_00 (4s)</td></tr>
+            </table>
+        </div>
+
+        <h3>5.2 Merge Consecutive Segments</h3>
+        <p>Combines adjacent segments from the same speaker for cleaner output:</p>
+        <pre><code><span class="keyword">if</span> seg[<span class="string">"speaker"</span>] == merged[-<span class="number">1</span>][<span class="string">"speaker"</span>]:
+    merged[-<span class="number">1</span>][<span class="string">"end"</span>] = seg[<span class="string">"end"</span>]
+    merged[-<span class="number">1</span>][<span class="string">"text"</span>] += <span class="string">" "</span> + seg[<span class="string">"text"</span>]</code></pre>
+
+        <!-- Output Formats -->
+        <h2 id="output">Output Formats</h2>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📋</div>
+                <div class="feature-title">JSON (Structured Data)</div>
+                <pre><code>{
+  <span class="string">"speakers"</span>: [<span class="string">"SPEAKER_00"</span>, <span class="string">"SPEAKER_01"</span>],
+  <span class="string">"segments"</span>: [{
+    <span class="string">"speaker"</span>: <span class="string">"SPEAKER_01"</span>,
+    <span class="string">"start"</span>: <span class="number">0.0</span>,
+    <span class="string">"end"</span>: <span class="number">5.0</span>,
+    <span class="string">"text"</span>: <span class="string">"Hello..."</span>
+  }]
+}</code></pre>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <div class="feature-title">TXT (Human Readable)</div>
+                <pre><code>[00:00:00 - 00:00:05] SPEAKER_01:
+Hello. Good morning...
+
+[00:00:05 - 00:00:15] SPEAKER_00:
+Good morning. I received...</code></pre>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎬</div>
+                <div class="feature-title">SRT (Subtitles)</div>
+                <pre><code>1
+00:00:00,000 --> 00:00:05,000
+[SPEAKER_01] Hello...
+
+2
+00:00:05,000 --> 00:00:15,000
+[SPEAKER_00] Good morning...</code></pre>
+            </div>
+        </div>
+
+        <!-- Performance -->
+        <h2>⚡ Performance</h2>
+        <div class="card">
+            <div class="card-title">Typical 4-minute call recording (CPU)</div>
+            <table>
+                <tr><th>Step</th><th>Time</th></tr>
+                <tr><td>WAV Conversion</td><td>~1s</td></tr>
+                <tr><td>Whisper Transcription</td><td>~20-40s</td></tr>
+                <tr><td>Feature Extraction</td><td>~2s</td></tr>
+                <tr><td>Clustering</td><td>&lt;1s</td></tr>
+                <tr><td><strong>Total</strong></td><td><strong>~25-45 seconds</strong></td></tr>
+            </table>
+        </div>
+        
+        <div class="alert alert-success">
+            <strong>🔌 Offline Capability:</strong> After first run, models are cached locally and everything works 100% offline!
+        </div>
+
+        <!-- Footer -->
+        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted);">
+            <p>Speaker Diarization System Documentation • Generated 2026</p>
+        </div>
+    </div>
+</body>
+</html>

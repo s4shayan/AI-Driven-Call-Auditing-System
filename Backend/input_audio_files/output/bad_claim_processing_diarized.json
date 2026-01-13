@@ -1,0 +1,80 @@
+{
+  "filename": "bad_claim_processing.mp3",
+  "speakers": [
+    "CUSTOMER",
+    "AGENT"
+  ],
+  "speaker_durations": {
+    "AGENT": 27.52,
+    "CUSTOMER": 19.24
+  },
+  "num_segments": 11,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 3.46,
+      "text": "Yeah, hello, MTBC, what do you want?",
+      "speaker": "AGENT"
+    },
+    {
+      "start": 4.06,
+      "end": 10.44,
+      "text": "Hi, I'm calling to ask about my claim status. I submitted it last week and wanted to know the processing time.",
+      "speaker": "CUSTOMER"
+    },
+    {
+      "start": 10.82,
+      "end": 14.6,
+      "text": "Fine, before I check anything, give me your name and date of birth.",
+      "speaker": "AGENT"
+    },
+    {
+      "start": 15.18,
+      "end": 20.94,
+      "text": "Sure, my name is Robert Hayes and my DOB is March 9, 1980.",
+      "speaker": "CUSTOMER"
+    },
+    {
+      "start": 21.72,
+      "end": 25.64,
+      "text": "Okay, whatever, checking. Your claim was submitted on the 26th.",
+      "speaker": "AGENT"
+    },
+    {
+      "start": 26.04,
+      "end": 28.76,
+      "text": "Right, that's correct. So, how long will it take?",
+      "speaker": "CUSTOMER"
+    },
+    {
+      "start": 29.32,
+      "end": 38.08,
+      "text": "It's pretty simple. The standard processing time for your payer is 7-14 business days. Your claim is still under routine review. Nothing is delayed.",
+      "speaker": "AGENT"
+    },
+    {
+      "start": 38.62,
+      "end": 41.18,
+      "text": "All right, I just wanted to make sure it's still moving.",
+      "speaker": "CUSTOMER"
+    },
+    {
+      "start": 41.84,
+      "end": 48.28,
+      "text": "Yeah, it's moving. There's nothing for you to do. You just wait. Once the payer finishes, the system updates automatically.",
+      "speaker": "AGENT"
+    },
+    {
+      "start": 48.74,
+      "end": 50.56,
+      "text": "Okay, thanks for the information.",
+      "speaker": "CUSTOMER"
+    },
+    {
+      "start": 51.24,
+      "end": 52.4,
+      "text": "Yeah, okay, bye.",
+      "speaker": "AGENT"
+    }
+  ]
+}

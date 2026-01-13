@@ -1,0 +1,7 @@
+faster-whisper
+resemblyzer
+librosa
+pydub
+scikit-learn
+numpy
+soundfile

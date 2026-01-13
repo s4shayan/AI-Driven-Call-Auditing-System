@@ -1,0 +1,344 @@
+Call_ID,Sentence,Label
+CALL1,Thank you for calling health for spilling,Greeting
+CALL1,This is Sarah speaking,Greeting
+CALL1,How can I assist you today,Greeting
+CALL1,Hi Sarah,Body
+CALL1,"I received a bill for $600 related to my x-ray last month, but I was under the impression that my insurance was supposed to cover it",Body
+CALL1,I'm sorry to hear about the confusion,Body
+CALL1,Let me take a look into this for you,Body
+CALL1,Could you please provide your account or policy number,Body
+CALL1,Sure,Body
+CALL1,It's 45789 under the name John Miller,Body
+CALL1,Thank you Mr,Body
+CALL1,Miller,Body
+CALL1,Please hold for a moment while I pull up your account details,Body
+CALL1,"All right, I see here that your insurance did process the claim, but they only covered 80% of the total cost",Body
+CALL1,I understand your concern,Body
+CALL1,"According to the policy notes, X-rays are classified under standard imaging, which is covered at 80%",Body
+CALL1,Only advanced imaging like CT or MRI scans have higher coverage,Body
+CALL1,Nobody explained that to me,Body
+CALL1,So now I'm responsible for $120 out of pocket,Body
+CALL1,"Yes, that is correct",Body
+CALL1,The remaining balance after insurance is $120,Body
+CALL1,I honestly don't think it's fair,Body
+CALL1,Is there any way to appeal this,Body
+CALL1,You do have the option to file an appeal with your insurance provider if you believe the service should have been fully covered,Body
+CALL1,I can provide you with the claim reference number and instructions,Body
+CALL1,"Okay, what's the reference number",Body
+CALL1,It's 9876545,Body
+CALL1,"When you contact your insurance company, just provide this number and they'll guide you through the appeal process",Body
+CALL1,"All right, but in the meantime, do I have to pay the $120",Body
+CALL1,You're not required to pay it until the appeal is resolved,Body
+CALL1,"However, if you'd like, we can also set up a payment plan so that the balance doesn't feel overwhelming",Body
+CALL1,A payment plan might help,Body
+CALL1,What options do you have,Body
+CALL1,"We can arrange three monthly payments of $40 each or six payments of $20 each, whichever works better for you",Body
+CALL1,Let's go with the three-month option,Body
+CALL1,Perfect,Body
+CALL1,I've scheduled three payments of $40 each starting from October 1st,Body
+CALL1,You'll receive a confirmation email shortly,Body
+CALL1,"Okay, thank you for helping me understand this",Body
+CALL1,"You're most welcome, Mr",Body
+CALL1,Miller,Body
+CALL1,Is there anything else I can help you with today,Closing
+CALL1,"No, that's all for now",Body
+CALL1,All right,Body
+CALL1,Thank you for calling Health First Billing,Greeting
+CALL1,Have a great day.,Closing
+CALL2,Thank you for calling Health First Billing,Greeting
+CALL2,This is Daniel,Greeting
+CALL2,How may I help you today,Greeting
+CALL2,"Hi, Daniel",Body
+CALL2,I just wanted to check the status of my insurance claim for a procedure I had earlier this month,Body
+CALL2,Of course,Body
+CALL2,I can help with that,Body
+CALL2,Could you please provide your policy number and the date of service,Body
+CALL2,Sure,Body
+CALL2,The policy number is 888234 and the service was on September 5th,Body
+CALL2,Thank you,Body
+CALL2,Please hold for a moment while I review the claim,Body
+CALL2,All right,Body
+CALL2,"I see your insurance company has received the claim, but it's still under review",Body
+CALL2,Under review,Body
+CALL2,It's been three weeks,Body
+CALL2,How long does it usually take,Body
+CALL2,"Typically, claim processing takes two to four weeks, depending on the insurer",Body
+CALL2,"In your case, they've requested additional documentation from the hospital",Body
+CALL2,"Oh, so that's why it's delayed",Body
+CALL2,Do I need to do anything,Body
+CALL2,No,Body
+CALL2,The provider will send the documents directly,Body
+CALL2,Come in checking back in about a week for an update,Body
+CALL2,"Okay, that makes sense",Body
+CALL2,Thank you for clarifying,Body
+CALL2,You're welcome,Body
+CALL2,Is there anything else I can assist you with today,Body
+CALL2,"No, that's all",Body
+CALL2,Thank you for calling Health First Billing,Greeting
+CALL2,Have a great day.,Closing
+INCORRECTBILLINGCODE,Good afternoon,Greeting
+INCORRECTBILLINGCODE,You've reached Health First Billing,Greeting
+INCORRECTBILLINGCODE,This is Melissa,Greeting
+INCORRECTBILLINGCODE,How may I assist you,Greeting
+INCORRECTBILLINGCODE,Hi Melissa,Body
+INCORRECTBILLINGCODE,"I just reviewed my bill and it looks like I was charged for an MRI,
+     but I only had an X-ray",Body
+INCORRECTBILLINGCODE,I'm sorry for the confusion,Body
+INCORRECTBILLINGCODE,Let me check your account,Body
+INCORRECTBILLINGCODE,Could you please give me your patient ID,Body
+INCORRECTBILLINGCODE,It's 39472,Body
+INCORRECTBILLINGCODE,Thank you,Body
+INCORRECTBILLINGCODE,Reviewing your record,Body
+INCORRECTBILLINGCODE,"Yes, I see the charge listed as MRI",Body
+INCORRECTBILLINGCODE,So I don't owe the $1200 that's listed,Body
+INCORRECTBILLINGCODE,Correct,Body
+INCORRECTBILLINGCODE,"Once we update the code to X-Ray, your insurance will cover most of it, leaving only $40 as patient responsibility",Body
+INCORRECTBILLINGCODE,"Wow, that's a big difference",Body
+INCORRECTBILLINGCODE,How long will it take to correct,Body
+INCORRECTBILLINGCODE,We'll resubmit the corrected claim today,Body
+INCORRECTBILLINGCODE,It usually takes five to seven business days to reflect,Body
+INCORRECTBILLINGCODE,"Alright, thank you so much",Body
+INCORRECTBILLINGCODE,I was really worried,Body
+INCORRECTBILLINGCODE,No problem at all,Body
+INCORRECTBILLINGCODE,I'll also send you a quick review of the  confirmation email once the adjustment is processed,Body
+INCORRECTBILLINGCODE,Perfect,Body
+INCORRECTBILLINGCODE,I appreciate your help,Body
+INCORRECTBILLINGCODE,Anytime,Closing
+INCORRECTBILLINGCODE,Thank you for calling Health First Billing.,Greeting
+PAYMENTPLANSETUP,Thank you for calling MTBC,Greeting
+PAYMENTPLANSETUP,This is James,Greeting
+PAYMENTPLANSETUP,How can I help you today,Greeting
+PAYMENTPLANSETUP,"Hi James,
+     I just received a bill for $500 from my recent lab tests and I can't pay it all at once",Body
+PAYMENTPLANSETUP,I completely understand,Body
+PAYMENTPLANSETUP,Let's see what options we have for a payment plan,Body
+PAYMENTPLANSETUP,Could I get your account number,Body
+PAYMENTPLANSETUP,It's 6-7-215,Body
+PAYMENTPLANSETUP,Thank you,Body
+PAYMENTPLANSETUP,"Looking at your balance of $500, we can split this into either $500 payments of $100",Body
+PAYMENTPLANSETUP,"We're ten payments of $50, which works better for you",Body
+PAYMENTPLANSETUP,The ten payments option would be easier for me,Body
+PAYMENTPLANSETUP,All right,Body
+PAYMENTPLANSETUP,"I'll set up ten monthly payments of $50 each, starting on October 5th",Body
+PAYMENTPLANSETUP,That's perfect,Body
+PAYMENTPLANSETUP,Will the payments be auto-deducted,Body
+PAYMENTPLANSETUP,Yes,Body
+PAYMENTPLANSETUP,We can schedule automatic deductions from your card,Body
+PAYMENTPLANSETUP,Do you want me to enable that,Body
+PAYMENTPLANSETUP,"Yes, please",Body
+PAYMENTPLANSETUP,That would be convenient,Body
+PAYMENTPLANSETUP,Great,Body
+PAYMENTPLANSETUP,I've set it up,Body
+PAYMENTPLANSETUP,You'll receive a payment confirmation each month by email,Body
+PAYMENTPLANSETUP,Excellent,Body
+PAYMENTPLANSETUP,Thank you so much,Body
+PAYMENTPLANSETUP,You're welcome,Body
+PAYMENTPLANSETUP,Is there anything else I can assist you with today,Body
+PAYMENTPLANSETUP,"No, that's all",Closing
+PAYMENTPLANSETUP,Thank you for calling MTBC and have a good day.,Greeting
+CLAIMDENIALCONFUSION,Thank you for calling MTBC Billing Services,Greeting
+CLAIMDENIALCONFUSION,This is Rebecca,Greeting
+CLAIMDENIALCONFUSION,How may I assist you today,Greeting
+CLAIMDENIALCONFUSION,"Hi Rebecca, my name is Ayesha Khan",Body
+CLAIMDENIALCONFUSION,I just got a letter saying my insurance denied the claim for my physical therapy sessions,Body
+CLAIMDENIALCONFUSION,I don't understand why I'm being billed $320,Body
+CLAIMDENIALCONFUSION,I'm sorry to hear that Ayesha,Body
+CLAIMDENIALCONFUSION,Let me pull up your account,Body
+CLAIMDENIALCONFUSION,Can I have your date of birth and the last four digits of your insurance ID,Body
+CLAIMDENIALCONFUSION,Sure,Body
+CLAIMDENIALCONFUSION,"It's 0,4, 12, 1990",Body
+CLAIMDENIALCONFUSION,and the ID ends in 7-8-4-3,Body
+CLAIMDENIALCONFUSION,Thank you,Body
+CLAIMDENIALCONFUSION,Please hold one moment,Body
+CLAIMDENIALCONFUSION,Okay,Body
+CLAIMDENIALCONFUSION,I see the claim here for physical therapy on August 15th and August 22nd,Body
+CLAIMDENIALCONFUSION,The insurance company denied it because they say there was no prior authorization on file,Body
+CLAIMDENIALCONFUSION,But my doctor told me everything was pre-approved,Body
+CLAIMDENIALCONFUSION,I even called my insurance before starting therapy,Body
+CLAIMDENIALCONFUSION,I understand,Body
+CLAIMDENIALCONFUSION,"Sometimes the provider's office thinks  it's approved, but the insurance requires a separate authorization code",Body
+CLAIMDENIALCONFUSION,Let me double check if we received anything from your physician's office,Body
+CLAIMDENIALCONFUSION,"Okay, please",Body
+CLAIMDENIALCONFUSION,"All right, I don't see an authorization number attached to the claim",Body
+CLAIMDENIALCONFUSION,That's why the insurance sent it back unpaid,Body
+CLAIMDENIALCONFUSION,So now I'm stuck with the full $320,Body
+CLAIMDENIALCONFUSION,Not necessarily,Body
+CLAIMDENIALCONFUSION,What we can do is file an appeal,Body
+CLAIMDENIALCONFUSION,"If you have documentation that prior approval  was obtained, we can resummit",Body
+CLAIMDENIALCONFUSION,Do you happen to have that authorization letter or a reference number,Body
+CLAIMDENIALCONFUSION,"I don't have it with me, but I can call my doctor's office and ask",Body
+CLAIMDENIALCONFUSION,That's the best next step,Body
+CLAIMDENIALCONFUSION,"If they can provide the prior authorization number, MTBC will refile the claim for you",Body
+CLAIMDENIALCONFUSION,"Until then, the balance will just stay in pending status",Body
+CLAIMDENIALCONFUSION,All right,Body
+CLAIMDENIALCONFUSION,And how much time do I have to appeal,Body
+CLAIMDENIALCONFUSION,Usually 60 days from the denial notice,Body
+CLAIMDENIALCONFUSION,"Since this was mailed on September 10th, you have  until early November",Body
+CLAIMDENIALCONFUSION,"Okay, good",Body
+CLAIMDENIALCONFUSION,"And if I don't get it approved, will there be any payment plan",Body
+CLAIMDENIALCONFUSION,Yes,Body
+CLAIMDENIALCONFUSION,"If the insurance ultimately refuses, we can set up a payment plan",Body
+CLAIMDENIALCONFUSION,"For $320, you could pay in four monthly installments of $80 or $8 installments of $40",Body
+CLAIMDENIALCONFUSION,That's helpful,Body
+CLAIMDENIALCONFUSION,I'll first call my doctor and see if they can fax over the authorization,Body
+CLAIMDENIALCONFUSION,Perfect,Body
+CLAIMDENIALCONFUSION,"Once they do, we'll update the claim and notify your insurance",Body
+CLAIMDENIALCONFUSION,also make a note on your account that you called today,Body
+CLAIMDENIALCONFUSION,"Thank you, Rebecca",Body
+CLAIMDENIALCONFUSION,You've been very clear,Body
+CLAIMDENIALCONFUSION,"My pleasure, Aisha",Body
+CLAIMDENIALCONFUSION,Is there anything else I can help you with today,Closing
+CLAIMDENIALCONFUSION,"No, that covers it",Body
+CLAIMDENIALCONFUSION,Thank you for calling MTBC Billing Services,Greeting
+CLAIMDENIALCONFUSION,Have a good day.,Closing
+PAYMENTPOSTINGISSUE,MTBC Billing Department,Greeting
+PAYMENTPOSTINGISSUE,This is Michael speaking,Greeting
+PAYMENTPOSTINGISSUE,How can I help you today,Greeting
+PAYMENTPOSTINGISSUE,"Hi, I made a payment of $200 online last week toward my surgery bill, but when I logged into the portal today, it still shows I owe the full $200",Body
+PAYMENTPOSTINGISSUE,I'm sorry for the confusion,Body
+PAYMENTPOSTINGISSUE,Can I get your account number or your date of birth so I can check the payment,Body
+PAYMENTPOSTINGISSUE,Sure,Body
+PAYMENTPOSTINGISSUE,"Account number is 55321, date of birth 0302 1982",Body
+PAYMENTPOSTINGISSUE,Thank you,Body
+PAYMENTPOSTINGISSUE,Give me a second,Body
+PAYMENTPOSTINGISSUE,"Okay, I do see your surgery claim from July, total $200",Body
+PAYMENTPOSTINGISSUE,"And yes, I see that the payment was submitted on September 17th",Body
+PAYMENTPOSTINGISSUE,"However, it looks like it hasn't been posted to your account yet",Body
+PAYMENTPOSTINGISSUE,But the money already left my bank account understood,Body
+PAYMENTPOSTINGISSUE,Sometimes there's a delay between the payment processor and MTBC system,Body
+PAYMENTPOSTINGISSUE,Let me check the transaction reference number,Body
+PAYMENTPOSTINGISSUE,Do you happen to have it,Body
+PAYMENTPOSTINGISSUE,"Yes, it's hashtag 888291",Body
+PAYMENTPOSTINGISSUE,Great,Body
+PAYMENTPOSTINGISSUE,I've located it,Body
+PAYMENTPOSTINGISSUE,It shows pending settlement,Body
+PAYMENTPOSTINGISSUE,That means the payment isn't transit but hasn't cleared into our billing system,Body
+PAYMENTPOSTINGISSUE,How long does that usually take,Body
+PAYMENTPOSTINGISSUE,Normally three to five business days since today is the 24th,Body
+PAYMENTPOSTINGISSUE,It should post by tomorrow or the day after,Body
+PAYMENTPOSTINGISSUE,"OK, I was worried I'd be marked late",Body
+PAYMENTPOSTINGISSUE,Don't worry,Body
+PAYMENTPOSTINGISSUE,I've notated your account that you already paid so you won't be charged a late fee,Body
+PAYMENTPOSTINGISSUE,Thank you,Body
+PAYMENTPOSTINGISSUE,Will I get a receipt once it's posted,Body
+PAYMENTPOSTINGISSUE,Yes,Body
+PAYMENTPOSTINGISSUE,"Once it clears, you'll automatically receive an email",Body
+PAYMENTPOSTINGISSUE,receipt,Body
+PAYMENTPOSTINGISSUE,You can also log in to the MTBC portal to download it,Body
+PAYMENTPOSTINGISSUE,Perfect,Body
+PAYMENTPOSTINGISSUE,"And just to be clear, once this $200 is posted, my balance is zero, right",Body
+PAYMENTPOSTINGISSUE,Correct,Body
+PAYMENTPOSTINGISSUE,That was your final balance,Body
+PAYMENTPOSTINGISSUE,Okay,Body
+PAYMENTPOSTINGISSUE,Thank you so much for helping me,Body
+PAYMENTPOSTINGISSUE,You're very welcome,Body
+PAYMENTPOSTINGISSUE,Anything else I can assist with today,Body
+PAYMENTPOSTINGISSUE,"No, that's it",Body
+PAYMENTPOSTINGISSUE,Thank you for calling MTBC Billing,Greeting
+PAYMENTPOSTINGISSUE,Have a great day.,Closing
+COORDINATIONOFBENEFITS,Thank you for calling MTBC Billing Services,Greeting
+COORDINATIONOFBENEFITS,This is Karen,Greeting
+COORDINATIONOFBENEFITS,How may I assist you today,Greeting
+COORDINATIONOFBENEFITS,"Hi Karen, my name is Omar Sidiqi",Body
+COORDINATIONOFBENEFITS,"I just got a bill for $180 for my lab work, but I have two insurances",Body
+COORDINATIONOFBENEFITS,Shouldn't the secondary have covered this balance,Body
+COORDINATIONOFBENEFITS,I understand Omar,Body
+COORDINATIONOFBENEFITS,Let me pull up your account,Body
+COORDINATIONOFBENEFITS,Can I have your date of birth in primary insurance ID,Body
+COORDINATIONOFBENEFITS,Sure,Body
+COORDINATIONOFBENEFITS,05 07 1987 and my primary ID ends in 612,Body
+COORDINATIONOFBENEFITS,Thank you,Body
+COORDINATIONOFBENEFITS,"Okay, I see the claim for your lab work on August 10th",Body
+COORDINATIONOFBENEFITS,"Your primary insurance paid part of it, but it looks like the secondary insurance hasn't processed the balance yet",Body
+COORDINATIONOFBENEFITS,That's odd,Body
+COORDINATIONOFBENEFITS,I gave both cards to the lab when I went in,Body
+COORDINATIONOFBENEFITS,Right,Body
+COORDINATIONOFBENEFITS,Sometimes the secondary claim doesn't automatically go through,Body
+COORDINATIONOFBENEFITS,We have to submit it manually,Body
+COORDINATIONOFBENEFITS,Did you recently change your secondary insurance,Body
+COORDINATIONOFBENEFITS,"Yes, actually",Body
+COORDINATIONOFBENEFITS,I switched from United to SIGNA in July,Body
+COORDINATIONOFBENEFITS,That explains it,Body
+COORDINATIONOFBENEFITS,"the lab probably had your old information, we'll need your updated SIGNA policy details to file the secondary claim",Body
+COORDINATIONOFBENEFITS,"Oh, I see",Body
+COORDINATIONOFBENEFITS,So I don't actually owe the $180 right now,Body
+COORDINATIONOFBENEFITS,Correct,Body
+COORDINATIONOFBENEFITS,"Once we have the updated insurance, we'll build them first",Body
+COORDINATIONOFBENEFITS,"If anything remains after their payment, then it would be your responsibility",Body
+COORDINATIONOFBENEFITS,"Okay, I'll give you the new card info right now",Body
+COORDINATIONOFBENEFITS,Perfect,Body
+COORDINATIONOFBENEFITS,"Once I enter this, MTBC will resubmit the claim to SIGNA",Body
+COORDINATIONOFBENEFITS,It usually takes about two weeks for them to process,Body
+COORDINATIONOFBENEFITS,relief,Body
+COORDINATIONOFBENEFITS,I was worried I had to pay right away,Body
+COORDINATIONOFBENEFITS,No need to worry,Body
+COORDINATIONOFBENEFITS,I have also placed your account on hold so you won't get any late notices,Body
+COORDINATIONOFBENEFITS,"Thank you so much, Karen",Body
+COORDINATIONOFBENEFITS,"My pleasure, Omar",Body
+COORDINATIONOFBENEFITS,You'll get an update email once the secondary insurance response,Body
+COORDINATIONOFBENEFITS,Great,Body
+COORDINATIONOFBENEFITS,I'll watch for that,Body
+COORDINATIONOFBENEFITS,Anything else I can help you with today,Closing
+COORDINATIONOFBENEFITS,"No, that's all",Body
+COORDINATIONOFBENEFITS,Thank you for calling MTBC Billing,Greeting
+COORDINATIONOFBENEFITS,Have a good day.,Closing
+REFUNDFOROVERPAYMENT,MTBC Billing Services,Greeting
+REFUNDFOROVERPAYMENT,This is Sophia speaking,Greeting
+REFUNDFOROVERPAYMENT,How may I help you,Greeting
+REFUNDFOROVERPAYMENT,"Hi Sophia, my name is Salmon Ahmed",Body
+REFUNDFOROVERPAYMENT,I think I overpaid my bill last month,Body
+REFUNDFOROVERPAYMENT,"I sent $300, but now the portal shows I only owed $250",Body
+REFUNDFOROVERPAYMENT,Let me check your account Salmon,Body
+REFUNDFOROVERPAYMENT,Can I have your date of birth and the last four of your insurance ID,Body
+REFUNDFOROVERPAYMENT,"Sure, 1123 1985 and the ID ends in 9002",Body
+REFUNDFOROVERPAYMENT,Thank you,Body
+REFUNDFOROVERPAYMENT,"Okay, and will I get a receipt or some confirmation",Body
+REFUNDFOROVERPAYMENT,Yes,Body
+REFUNDFOROVERPAYMENT,"Once the refund is processed, you'll receive an email confirmation",Body
+REFUNDFOROVERPAYMENT,You'll also see it in the patient portal,Body
+REFUNDFOROVERPAYMENT,Perfect,Body
+REFUNDFOROVERPAYMENT,I just didn't want that money floating around,Body
+REFUNDFOROVERPAYMENT,Totally understandable,Body
+REFUNDFOROVERPAYMENT,I'll also send a note to our finance department to prioritize your refund,Body
+REFUNDFOROVERPAYMENT,"Thank you, Sophia",Body
+REFUNDFOROVERPAYMENT,You've been very helpful,Body
+REFUNDFOROVERPAYMENT,My pleasure,Body
+REFUNDFOROVERPAYMENT,Is there anything else I can assist you with,Body
+REFUNDFOROVERPAYMENT,"No, that's all",Body
+REFUNDFOROVERPAYMENT,Thank you for calling MTBC Billing Services Salmon,Greeting
+REFUNDFOROVERPAYMENT,Have a great day,Closing
+DEDUCTIBLECONFUSION,MTBC Billing Department,Greeting
+DEDUCTIBLECONFUSION,This is Jonathan,Greeting
+DEDUCTIBLECONFUSION,How can I help you today,Greeting
+DEDUCTIBLECONFUSION,Hi Jonathan,Body
+DEDUCTIBLECONFUSION,I received a bill for $450 from my recent CT scan,Body
+DEDUCTIBLECONFUSION,"My insurance company told me it was applied to my deductible, but I don't really understand what that means",Body
+DEDUCTIBLECONFUSION,I'm glad you called,Body
+DEDUCTIBLECONFUSION,Can I verify your name and date of birth,Body
+DEDUCTIBLECONFUSION,"Yes, it's Farah Malik, 0916 1992",Body
+DEDUCTIBLECONFUSION,Thank you Farah,Body
+DEDUCTIBLECONFUSION,I see the claim for the CT scan on September 7th,Body
+DEDUCTIBLECONFUSION,"So basically I'm paying out of pocket until I reach $1,000",Body
+DEDUCTIBLECONFUSION,Exactly,Body
+DEDUCTIBLECONFUSION,"Once you've paid $1,000 in covered services, the insurance will start paying a larger portion, sometimes up to 80 to 100%, depending on your plan",Body
+DEDUCTIBLECONFUSION,That's frustrating,Body
+DEDUCTIBLECONFUSION,I thought that was a good idea,Body
+DEDUCTIBLECONFUSION,I understand,Body
+DEDUCTIBLECONFUSION,"Preventive services are fully covered, but diagnostic imaging usually goes toward your deductible",Body
+DEDUCTIBLECONFUSION,"Okay, I think I get it now, but do I have to pay the $450 all at once",Body
+DEDUCTIBLECONFUSION,Not at all,Body
+DEDUCTIBLECONFUSION,We can set up a payment plan,Body
+DEDUCTIBLECONFUSION,"For example, six monthly payments of $75",Body
+DEDUCTIBLECONFUSION,That would definitely help,Body
+DEDUCTIBLECONFUSION,Great,Body
+DEDUCTIBLECONFUSION,I'll set that up and send you a confirmation email,Body
+DEDUCTIBLECONFUSION,Your first installment will be due  October 10th,Body
+DEDUCTIBLECONFUSION,Perfect,Body
+DEDUCTIBLECONFUSION,Thank you for explaining this in simple terms,Body
+DEDUCTIBLECONFUSION,"Of course, Farah",Body
+DEDUCTIBLECONFUSION,I know deductibles can be confusing,Body
+DEDUCTIBLECONFUSION,They really are,Body
+DEDUCTIBLECONFUSION,Anything else I can assist with today,Body
+DEDUCTIBLECONFUSION,"No, you've been very helpful",Body
+DEDUCTIBLECONFUSION,Thank you for calling MTBC Billing Services,Greeting
+DEDUCTIBLECONFUSION,Have a good evening,Closing

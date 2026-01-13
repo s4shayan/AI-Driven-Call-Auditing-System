@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaker Diarization - Setup Guide</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #10b981;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --bg-code: #0d1117;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --accent-blue: #3b82f6;
+            --accent-green: #22c55e;
+            --accent-yellow: #eab308;
+            --accent-red: #ef4444;
+            --accent-purple: #a855f7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--text);
+            margin: 2.5rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .step-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border: 1px solid var(--border);
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .req-card {
+            background: var(--bg-card);
+            border-radius: 10px;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .req-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .req-title {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .req-version {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        code {
+            background: var(--bg-code);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: var(--accent-green);
+        }
+
+        pre {
+            background: var(--bg-code);
+            padding: 1.25rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            border: 1px solid var(--border);
+            position: relative;
+        }
+
+        pre code {
+            padding: 0;
+            background: none;
+            color: var(--text);
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background: var(--border);
+            border: none;
+            color: var(--text-muted);
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .alert {
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid;
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .alert-icon {
+            font-size: 1.25rem;
+        }
+
+        .alert-info {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: var(--accent-blue);
+        }
+
+        .alert-success {
+            background: rgba(34, 197, 94, 0.1);
+            border-color: var(--accent-green);
+        }
+
+        .alert-warning {
+            background: rgba(234, 179, 8, 0.1);
+            border-color: var(--accent-yellow);
+        }
+
+        .checklist {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .checklist li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            color: var(--accent-green);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .usage-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(16, 185, 129, 0.1));
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border);
+        }
+
+        .usage-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th,
+        td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-required {
+            background: rgba(239, 68, 68, 0.2);
+            color: var(--accent-red);
+        }
+
+        .badge-optional {
+            background: rgba(168, 85, 247, 0.2);
+            color: var(--accent-purple);
+        }
+
+        .file-tree {
+            background: var(--bg-code);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9rem;
+        }
+
+        .file-tree .folder {
+            color: var(--accent-blue);
+        }
+
+        .file-tree .file {
+            color: var(--text-muted);
+        }
+
+        .file-tree .file-main {
+            color: var(--accent-green);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 1rem 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.65rem;
+            top: 1.25rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 2px solid var(--bg-dark);
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .timeline-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🛠️ Setup Guide</h1>
+        <p class="subtitle">Get the Speaker Diarization System running in 5 minutes</p>
+
+        <!-- Requirements -->
+        <h2><span class="step-badge">1</span> Requirements</h2>
+
+        <div class="requirements-grid">
+            <div class="req-card">
+                <div class="req-icon">🐍</div>
+                <div class="req-title">Python</div>
+                <div class="req-version">3.8 or higher</div>
+            </div>
+            <div class="req-card">
+                <div class="req-icon">🔊</div>
+                <div class="req-title">FFmpeg</div>
+                <div class="req-version">For audio conversion</div>
+            </div>
+            <div class="req-card">
+                <div class="req-icon">💾</div>
+                <div class="req-title">Disk Space</div>
+                <div class="req-version">~500MB for models</div>
+            </div>
+            <div class="req-card">
+                <div class="req-icon">🧠</div>
+                <div class="req-title">RAM</div>
+                <div class="req-version">4GB minimum</div>
+            </div>
+        </div>
+
+        <!-- Install FFmpeg -->
+        <h2><span class="step-badge">2</span> Install FFmpeg</h2>
+        <p>FFmpeg is required for audio format conversion. Choose your method:</p>
+
+        <div class="card">
+            <h4 style="color: var(--accent-blue); margin-bottom: 1rem;">Option A: Using winget (Recommended)</h4>
+            <pre><code>winget install FFmpeg</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+        </div>
+
+        <div class="card">
+            <h4 style="color: var(--accent-green); margin-bottom: 1rem;">Option B: Using Chocolatey</h4>
+            <pre><code>choco install ffmpeg</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+        </div>
+
+        <div class="card">
+            <h4 style="color: var(--accent-yellow); margin-bottom: 1rem;">Option C: Manual Download</h4>
+            <ol style="color: var(--text-muted); padding-left: 1.5rem;">
+                <li>Download from <a href="https://ffmpeg.org/download.html"
+                        style="color: var(--primary);">ffmpeg.org</a></li>
+                <li>Extract to <code>C:\ffmpeg</code></li>
+                <li>Add <code>C:\ffmpeg\bin</code> to your PATH environment variable</li>
+            </ol>
+        </div>
+
+        <div class="alert alert-info">
+            <span class="alert-icon">✅</span>
+            <div>
+                <strong>Verify Installation:</strong> Run <code>ffmpeg -version</code> in terminal
+            </div>
+        </div>
+
+        <!-- Install Dependencies -->
+        <h2><span class="step-badge">3</span> Install Python Dependencies</h2>
+        <p>Open terminal in the project folder and run:</p>
+
+        <pre><code>pip install faster-whisper librosa pydub scikit-learn numpy soundfile</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+
+        <p>Or install from requirements.txt:</p>
+        <pre><code>pip install -r requirements.txt</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+
+        <div class="card">
+            <h4 style="margin-bottom: 1rem; color: var(--text);">📦 Dependencies Explained</h4>
+            <table>
+                <tr>
+                    <th>Package</th>
+                    <th>Size</th>
+                    <th>Purpose</th>
+                </tr>
+                <tr>
+                    <td><code>faster-whisper</code></td>
+                    <td>~50MB</td>
+                    <td>Speech-to-text transcription</td>
+                </tr>
+                <tr>
+                    <td><code>librosa</code></td>
+                    <td>~20MB</td>
+                    <td>Audio feature extraction (MFCCs)</td>
+                </tr>
+                <tr>
+                    <td><code>pydub</code></td>
+                    <td>~1MB</td>
+                    <td>Audio format conversion</td>
+                </tr>
+                <tr>
+                    <td><code>scikit-learn</code></td>
+                    <td>~30MB</td>
+                    <td>Speaker clustering algorithm</td>
+                </tr>
+                <tr>
+                    <td><code>soundfile</code></td>
+                    <td>~5MB</td>
+                    <td>WAV file handling</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- First Run -->
+        <h2><span class="step-badge">4</span> First Run (Model Download)</h2>
+        <p>On first run, Whisper models will be downloaded automatically:</p>
+
+        <pre><code>python diarize_transcribe.py --input "your_audio.mp3"</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+
+        <div class="alert alert-warning">
+            <span class="alert-icon">⏳</span>
+            <div>
+                <strong>First run takes longer!</strong> The Whisper model (~145MB for "base") will be downloaded and
+                cached. Subsequent runs work offline.
+            </div>
+        </div>
+
+        <div class="card">
+            <h4 style="margin-bottom: 1rem; color: var(--text);">📊 Model Download Sizes</h4>
+            <table>
+                <tr>
+                    <th>Model</th>
+                    <th>Download Size</th>
+                    <th>Use Case</th>
+                </tr>
+                <tr>
+                    <td><code>tiny</code></td>
+                    <td>~75MB</td>
+                    <td>Fast, lower accuracy</td>
+                </tr>
+                <tr>
+                    <td><code>base</code></td>
+                    <td>~145MB</td>
+                    <td>⭐ Default, good balance</td>
+                </tr>
+                <tr>
+                    <td><code>small</code></td>
+                    <td>~465MB</td>
+                    <td>Better accuracy</td>
+                </tr>
+                <tr>
+                    <td><code>medium</code></td>
+                    <td>~1.5GB</td>
+                    <td>High accuracy</td>
+                </tr>
+                <tr>
+                    <td><code>large-v3</code></td>
+                    <td>~3GB</td>
+                    <td>Best accuracy</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Usage -->
+        <h2><span class="step-badge">5</span> Usage</h2>
+
+        <div class="usage-box">
+            <div class="usage-title">🎯 Basic Usage</div>
+            <pre><code><span style="color: var(--text-muted);"># Process single file</span>
+python diarize_transcribe.py --input "recording.mp3"
+
+<span style="color: var(--text-muted);"># Process all MP3 files in folder</span>
+python diarize_transcribe.py --all</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+        </div>
+
+        <div class="usage-box">
+            <div class="usage-title">⚙️ Advanced Options</div>
+            <pre><code><span style="color: var(--text-muted);"># Specify number of speakers (default: 2)</span>
+python diarize_transcribe.py --input "audio.mp3" --num_speakers 3
+
+<span style="color: var(--text-muted);"># Use a larger/more accurate model</span>
+python diarize_transcribe.py --input "audio.mp3" --model small
+
+<span style="color: var(--text-muted);"># Custom output directory</span>
+python diarize_transcribe.py --input "audio.mp3" --output ./results</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+        </div>
+
+        <div class="card">
+            <h4 style="margin-bottom: 1rem; color: var(--text);">📋 All Command Line Options</h4>
+            <table>
+                <tr>
+                    <th>Option</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td><code>--input, -i</code></td>
+                    <td><span class="badge badge-required">Required*</span></td>
+                    <td>-</td>
+                    <td>Input audio file path</td>
+                </tr>
+                <tr>
+                    <td><code>--all, -a</code></td>
+                    <td><span class="badge badge-required">Required*</span></td>
+                    <td>-</td>
+                    <td>Process all MP3s in folder</td>
+                </tr>
+                <tr>
+                    <td><code>--output, -o</code></td>
+                    <td><span class="badge badge-optional">Optional</span></td>
+                    <td>./output</td>
+                    <td>Output directory</td>
+                </tr>
+                <tr>
+                    <td><code>--num_speakers, -n</code></td>
+                    <td><span class="badge badge-optional">Optional</span></td>
+                    <td>2</td>
+                    <td>Number of speakers</td>
+                </tr>
+                <tr>
+                    <td><code>--model, -m</code></td>
+                    <td><span class="badge badge-optional">Optional</span></td>
+                    <td>base</td>
+                    <td>Whisper model size</td>
+                </tr>
+            </table>
+            <p style="font-size: 0.85rem; margin-top: 0.5rem;">* Either <code>--input</code> or <code>--all</code> is
+                required</p>
+        </div>
+
+        <!-- Output Files -->
+        <h2><span class="step-badge">6</span> Output Files</h2>
+        <p>After processing, you'll find these files in the <code>output/</code> folder:</p>
+
+        <div class="file-tree">
+            <span class="folder">📁 output/</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="file-main">📄 recording_transcript.txt</span> &nbsp; <span
+                style="color: var(--text-muted);">← Human-readable</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="file-main">📄 recording_diarized.json</span> &nbsp; <span
+                style="color: var(--text-muted);">← Structured data</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="file-main">📄 recording.srt</span> &nbsp; <span
+                style="color: var(--text-muted);">← Subtitles</span>
+        </div>
+
+        <!-- Troubleshooting -->
+        <h2>🔧 Troubleshooting</h2>
+
+        <div class="card">
+            <h4 style="color: var(--accent-red); margin-bottom: 1rem;">❌ "FFmpeg not found"</h4>
+            <p>FFmpeg is not installed or not in PATH. Reinstall using Step 2.</p>
+        </div>
+
+        <div class="card">
+            <h4 style="color: var(--accent-red); margin-bottom: 1rem;">❌ "No module named 'faster_whisper'"</h4>
+            <p>Dependencies not installed. Run: <code>pip install faster-whisper</code></p>
+        </div>
+
+        <div class="card">
+            <h4 style="color: var(--accent-red); margin-bottom: 1rem;">❌ "CUDA out of memory"</h4>
+            <p>GPU memory issue. The script defaults to CPU, which should work fine. If issues persist, try a smaller
+                model: <code>--model tiny</code></p>
+        </div>
+
+        <div class="card">
+            <h4 style="color: var(--accent-yellow); margin-bottom: 1rem;">⚠️ Slow processing</h4>
+            <p>Normal on CPU. A 4-minute audio takes ~30-45 seconds. For faster results, use <code>--model tiny</code>.
+            </p>
+        </div>
+
+        <!-- Quick Start -->
+        <h2>🚀 Quick Start Checklist</h2>
+
+        <ul class="checklist">
+            <li>
+                <span class="check-icon">☐</span>
+                <div>
+                    <div class="timeline-title">Install Python 3.8+</div>
+                    <div class="timeline-desc"><code>python --version</code> to verify</div>
+                </div>
+            </li>
+            <li>
+                <span class="check-icon">☐</span>
+                <div>
+                    <div class="timeline-title">Install FFmpeg</div>
+                    <div class="timeline-desc"><code>winget install FFmpeg</code></div>
+                </div>
+            </li>
+            <li>
+                <span class="check-icon">☐</span>
+                <div>
+                    <div class="timeline-title">Install dependencies</div>
+                    <div class="timeline-desc"><code>pip install -r requirements.txt</code></div>
+                </div>
+            </li>
+            <li>
+                <span class="check-icon">☐</span>
+                <div>
+                    <div class="timeline-title">Place audio files in folder</div>
+                    <div class="timeline-desc">MP3, WAV, or other formats supported</div>
+                </div>
+            </li>
+            <li>
+                <span class="check-icon">☐</span>
+                <div>
+                    <div class="timeline-title">Run the script</div>
+                    <div class="timeline-desc"><code>python diarize_transcribe.py --all</code></div>
+                </div>
+            </li>
+            <li>
+                <span class="check-icon">☐</span>
+                <div>
+                    <div class="timeline-title">Check output folder</div>
+                    <div class="timeline-desc">Results in <code>./output/</code></div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="alert alert-success" style="margin-top: 2rem;">
+            <span class="alert-icon">🎉</span>
+            <div>
+                <strong>You're all set!</strong> After first run, everything works 100% offline.
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div
+            style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted);">
+            <p>Speaker Diarization System - Setup Guide • 2026</p>
+        </div>
+    </div>
+
+    <script>
+        function copyCode(btn) {
+            const code = btn.parentElement.querySelector('code').innerText;
+            navigator.clipboard.writeText(code);
+            btn.textContent = 'Copied!';
+            setTimeout(() => btn.textContent = 'Copy', 2000);
+        }
+    </script>
+</body>
+
+</html>

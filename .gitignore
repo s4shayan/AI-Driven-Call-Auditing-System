@@ -1,0 +1,73 @@
+# ===============================
+# Python related
+# ===============================
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ===============================
+# Machine Learning Models & Data
+# ===============================
+models/
+*.pkl
+*.pt
+*.pth
+*.bin
+*.gguf
+*.safetensors
+*.zip
+*.tar.gz
+*.tgz
+*.7z
+Backend/App/SummaryModel/
+Backend/App/Segmentation/
+Backend/models/
+
+# ===============================
+# Node / React Native / Frontend
+# ===============================
+node_modules/
+.expo/
+dist/
+build/
+web-build/
+*.jsbundle
+.yarn/
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Android Build
+Frontend/android/app/build/
+Frontend/android/.gradle/
+Frontend/android/local.properties
+Frontend/android/*.keystore
+
+# iOS Build
+Frontend/ios/build/
+Frontend/ios/DerivedData/
+Frontend/ios/*.ipa
+
+# ===============================
+# Logs & OS files
+# ===============================
+*.log
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/
+.ipynb_checkpoints/
+.env
+.env.*

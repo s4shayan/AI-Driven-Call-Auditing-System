@@ -1,0 +1,26 @@
+### TYPE: DEFINITION
+TERM: Pending Settlement
+RULE: Pending Settlement means payment is issued but not posted. Agents must tell the caller to wait 5-12 business days.
+SOURCE_ID: 15, 64
+
+### TYPE: WORKFLOW
+NAME: Eligibility Verification
+STEP: 1
+CONTENT: Greet the caller and perform identity verification (Name, DOB, Member ID).
+SOURCE_ID: 22
+
+### TYPE: WORKFLOW
+NAME: Eligibility Verification
+STEP: 2
+CONTENT: Check the practice management portal for Active Coverage, Plan Type, and Prior Auth requirements.
+SOURCE_ID: 23
+
+### TYPE: COMPLIANCE
+CATEGORY: Identity Verification
+CONTENT: The agent must always verify the patient's full name and DOB plus one other identifier (Member ID, SSN Last 4) before discussing PHI.
+SOURCE_ID: 60
+
+### TYPE: FAQ
+QUESTION: Why was my claim denied?
+ANSWER: Read the denial reason from the EOB. Common reasons are missing auth, duplicate submission, or coding errors.
+SOURCE_ID: 86, 87

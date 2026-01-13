@@ -1,0 +1,263 @@
+### TYPE: RULE
+NAME: Balance Breakdown Requirement
+CONTENT: Agents must always break down the patient's balance into deductible, copay, coinsurance, adjustments, and non-covered charges before explaining the total.
+SOURCE_ID: 301
+
+### TYPE: RULE
+NAME: Allowed Amount Explanation
+CONTENT: When explaining a bill, the agent must reference the insurance allowed amount and clarify how it affects the final patient responsibility.
+SOURCE_ID: 302
+
+### TYPE: RULE
+NAME: Multiple Service Lines
+CONTENT: When billing includes multiple service lines, agents must explain each line item separately and confirm if they were rendered on the same or different dates.
+SOURCE_ID: 303
+
+### TYPE: RULE
+NAME: Provider/Lab Split Billing
+CONTENT: If charges come from multiple entities such as provider and lab, agents must clarify that separate bills may be issued.
+SOURCE_ID: 304
+
+### TYPE: RULE
+NAME: High Deductible Explanation
+CONTENT: For high-deductible health plans, agents must clearly explain how much deductible has been met and how much remains.
+SOURCE_ID: 305
+
+
+### TYPE: RULE
+NAME: Claim Processing Time
+CONTENT: Inform callers that insurance companies generally take 15–30 business days to process a claim.
+SOURCE_ID: 320
+
+### TYPE: RULE
+NAME: Claim Pending Workflow
+CONTENT: When a claim is pending, agents must check eligibility, verify demographics, and confirm any missing documentation.
+SOURCE_ID: 321
+
+### TYPE: RULE
+NAME: Reprocessing Claim
+CONTENT: Claims can only be reprocessed after confirming updated insurance information or corrected demographics.
+SOURCE_ID: 322
+
+### TYPE: RULE
+NAME: Duplicate Claim Check
+CONTENT: Before submitting a resubmission request, agents must check if a duplicate claim has already been filed.
+SOURCE_ID: 323
+
+### TYPE: RULE
+NAME: Claim Acknowledgment
+CONTENT: Agents must confirm whether the insurance has received the claim before telling the patient it is in process.
+SOURCE_ID: 324
+
+
+### TYPE: RULE
+NAME: Denial Explanation Accuracy
+CONTENT: Denial reasons must be read directly from the EOB or payer portal without altering or paraphrasing the official wording.
+SOURCE_ID: 340
+
+### TYPE: RULE
+NAME: Missing Prior Authorization
+CONTENT: For prior authorization denials, agents must instruct callers to contact the provider's office because the authorization must be initiated by the clinical team.
+SOURCE_ID: 341
+
+### TYPE: RULE
+NAME: COB Denial Handling
+CONTENT: For Coordination of Benefits denials, the patient must update primary and secondary insurance information with the payer before the claim can be reopened.
+SOURCE_ID: 342
+
+### TYPE: RULE
+NAME: Medical Necessity Denial
+CONTENT: Medical necessity denials require the provider to submit medical records or an appeal; agents must not advise patients on clinical documentation.
+SOURCE_ID: 343
+
+### TYPE: RULE
+NAME: Timely Filing Denial
+CONTENT: When a claim is denied for timely filing, agents must inform the caller that an appeal may not be possible unless practice policy allows exceptions.
+SOURCE_ID: 344
+
+
+
+### TYPE: RULE
+NAME: Insurance Verification Minimum Data
+CONTENT: Agents must verify payer name, member ID, group number, plan type, and effective dates for every insurance update.
+SOURCE_ID: 360
+
+### TYPE: RULE
+NAME: Expired Insurance Handling
+CONTENT: If insurance is inactive on the service date, inform the patient that the balance becomes self-pay unless new coverage is provided.
+SOURCE_ID: 361
+
+### TYPE: RULE
+NAME: Secondary Insurance Posting
+CONTENT: Secondary insurance can only be billed after primary EOB is posted.
+SOURCE_ID: 362
+
+### TYPE: RULE
+NAME: COB Required by Payer
+CONTENT: If payer requires COB, no claim activity can proceed until the patient updates COB with the insurance.
+SOURCE_ID: 363
+
+### TYPE: RULE
+NAME: Incorrect Insurance ID
+CONTENT: Claims with incorrect member IDs must be corrected before resubmission.
+SOURCE_ID: 364
+
+
+
+### TYPE: RULE
+NAME: Allowed vs Billed Clarification
+CONTENT: Agents must explain the difference between the billed amount and the allowed amount when reviewing an EOB.
+SOURCE_ID: 380
+
+### TYPE: RULE
+NAME: Adjustment Codes Explanation
+CONTENT: Agents must read adjustment codes directly from the EOB without guessing their meanings.
+SOURCE_ID: 381
+
+### TYPE: RULE
+NAME: Benefit Maximum Reached
+CONTENT: If the EOB shows benefit maximum reached, inform the patient that insurance will not pay further until next coverage cycle.
+SOURCE_ID: 382
+
+### TYPE: RULE
+NAME: Out-of-Network EOB
+CONTENT: For out-of-network services, agents must explain that the allowed amount may be significantly lower than billed.
+SOURCE_ID: 383
+
+### TYPE: RULE
+NAME: Non-Covered Services
+CONTENT: If EOB marks a service as non-covered, the patient becomes responsible unless benefit exception applies.
+SOURCE_ID: 384
+
+
+
+### TYPE: RULE
+NAME: Minimum Payment Plan Eligibility
+CONTENT: Payment plans are only available for balances above the practice-defined minimum threshold.
+SOURCE_ID: 400
+
+### TYPE: RULE
+NAME: Payment Card Handling
+CONTENT: Agents must never repeat full card number or CVV; only confirm last four digits.
+SOURCE_ID: 401
+
+### TYPE: RULE
+NAME: Auto-Debit Authorization
+CONTENT: Auto-debit setups require explicit verbal consent and confirmation of charge dates.
+SOURCE_ID: 402
+
+### TYPE: RULE
+NAME: Partial Payments Posting
+CONTENT: Partial payments must be posted immediately and reflected in the patient ledger.
+SOURCE_ID: 403
+
+### TYPE: RULE
+NAME: Due Date Extension
+CONTENT: Agents may extend due dates only if the practice’s policy allows and must document the reason for extension.
+SOURCE_ID: 404
+
+
+### TYPE: RULE
+NAME: Overpayment Verification
+CONTENT: Refunds can be initiated only after confirming duplicate payment or insurance reversal.
+SOURCE_ID: 420
+
+### TYPE: RULE
+NAME: Refund Processing Timeline
+CONTENT: Refund requests may take 10–15 business days depending on bank processing.
+SOURCE_ID: 421
+
+### TYPE: RULE
+NAME: Insurance Refund Priority
+CONTENT: If insurance overpaid, refund must go to payer first, not the patient.
+SOURCE_ID: 422
+
+### TYPE: RULE
+NAME: Adjustment Restrictions
+CONTENT: Agents cannot apply adjustments unless authorized by billing supervisor or practice administrator.
+SOURCE_ID: 423
+
+### TYPE: RULE
+NAME: Credit Balance Transfer
+CONTENT: Credit balances from old accounts must be moved manually to the new visit ledger before issuing refunds.
+SOURCE_ID: 424
+
+
+
+### TYPE: RULE
+NAME: Dispute Documentation Requirement
+CONTENT: All charge disputes must be documented with date of service, disputed amount, and detailed reason provided by the patient.
+SOURCE_ID: 440
+
+### TYPE: RULE
+NAME: Coding Review Request
+CONTENT: If patient disputes coding, agents must escalate to coding team instead of explaining CPT/ICD logic.
+SOURCE_ID: 441
+
+### TYPE: RULE
+NAME: Service Not Rendered Dispute
+CONTENT: For “service not received” disputes, verify encounter notes before initiating corrections.
+SOURCE_ID: 442
+
+### TYPE: RULE
+NAME: Duplicate Charge Investigation
+CONTENT: Agents must check service dates, provider, and CPT codes to confirm whether duplicate billing occurred.
+SOURCE_ID: 443
+
+### TYPE: RULE
+NAME: Modifier Issue Escalation
+CONTENT: Modifier-related billing issues must be escalated to coding or billing supervisor for correction.
+SOURCE_ID: 444
+
+
+
+### TYPE: RULE
+NAME: Minimum Verification for PHI
+CONTENT: Agents must verify name, DOB, and one additional identifier before discussing any PHI.
+SOURCE_ID: 460
+
+### TYPE: RULE
+NAME: Third-Party Disclosure
+CONTENT: Agents cannot disclose patient information to family members unless an authorization is on file.
+SOURCE_ID: 461
+
+### TYPE: RULE
+NAME: Call Recording Notice
+CONTENT: Agents must disclose if calls are recorded, depending on state regulations.
+SOURCE_ID: 462
+
+### TYPE: RULE
+NAME: Data Storage Compliance
+CONTENT: No account numbers, SSN, or payment data should be written down or stored outside secure systems.
+SOURCE_ID: 463
+
+### TYPE: RULE
+NAME: PHI Transmission Rules
+CONTENT: PHI must not be sent over unsecured email or messaging platforms.
+SOURCE_ID: 464
+
+
+### TYPE: RULE
+NAME: Professional Tone
+CONTENT: Agents must maintain a calm, professional tone even when the caller is upset or confused.
+SOURCE_ID: 480
+
+### TYPE: RULE
+NAME: Escalation Policy
+CONTENT: Calls requiring clinical, coding, or insurance appeal support must be escalated to the correct team.
+SOURCE_ID: 481
+
+### TYPE: RULE
+NAME: Documentation Standards
+CONTENT: Every call must be documented with issue, resolution, and next steps before closing the ticket.
+SOURCE_ID: 482
+
+### TYPE: RULE
+NAME: Follow-Up Timeframe
+CONTENT: If follow-up is required, agents must provide a clear expected timeline and reference number if available.
+SOURCE_ID: 483
+
+### TYPE: RULE
+NAME: Transparency Rule
+CONTENT: Agents must clearly explain what actions can and cannot be performed based on billing policies.
+SOURCE_ID: 484
