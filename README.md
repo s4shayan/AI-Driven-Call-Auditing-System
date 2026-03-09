@@ -7,7 +7,7 @@ A sophisticated, AI-powered platform designed to automate the auditing of corpor
 ## ✨ Key Features
 
 *   **🎧 Automated Transcription**: High-accuracy speech-to-text conversion using OpenAI's **Whisper** model.
-*   **👥 Speaker Diarization**: Intelligently identifies and separates up to 5 speakers in a single conversation.
+*   **👥 Speaker Diarization**: Intelligently identifies and separates speakers in conversation.
 *   **⚖️ Intelligent Call Auditing**: Automatically evaluates calls based on predefined **Knowledge Base** rules using vector embeddings.
 *   **❤️ Advanced Scoring (GSM/CSM)**: 
     *   **Greeting Score Model (GSM)**: Evaluates the professionalism and completeness of call openings.
